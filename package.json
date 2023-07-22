@@ -1,8 +1,11 @@
 {
-  "name": "@ryanzhao1993/antd",
+  "name": "antd",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/antd.js",
+  "typings": "lib/index.d.ts",
   "files": [
     "dist",
     "es",
@@ -11,7 +14,11 @@
   "scripts": {
     "build": "webpack",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test:unit": "jest --config unit.jest.js",
+    "test:e2e": "jest --config e2e.jest.js",
+    "test": "npm run test:unit && npm run test:e2e",
+    "compile": "gulp compile"
   },
   "publishConfig": {
     "access": "public",
